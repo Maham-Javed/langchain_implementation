@@ -1,2 +1,19 @@
+# ignoring this testing file
+test.py
+experiment.py
+
+chroma_db
+db_with_metadata
+*.sqlite3
+
+# dotenv environment variable files
 .env
-db/
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+.env.development
+
+# extra files
+.venv
+.ropeproject
