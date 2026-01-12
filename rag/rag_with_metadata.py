@@ -32,7 +32,6 @@ embeddings = HuggingFaceEmbeddings(
     model_name="BAAI/bge-small-en-v1.5"
 )
 
-
 # ---------------------------------------------------------
 # INGESTION: Create Vector Store (Run Once)
 # ---------------------------------------------------------

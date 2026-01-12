@@ -49,7 +49,6 @@ embeddings = HuggingFaceEmbeddings(
     encode_kwargs={"normalize_embeddings": True}
 )
 
-
 # =========================================================
 # LOAD VECTOR STORE
 # =========================================================
@@ -60,7 +59,6 @@ db = Chroma(
     persist_directory=PERSIST_DIRECTORY,
     embedding_function=embeddings
 )
-
 
 # =========================================================
 # RETRIEVER CONFIGURATION
@@ -79,7 +77,6 @@ retriever = db.as_retriever(
     }
 )
 
-
 # =========================================================
 # LANGUAGE MODEL CONFIGURATION
 # =========================================================
@@ -92,7 +89,6 @@ llm = ChatGroq(
     model="llama-3.1-8b-instant", 
     temperature=0.7 # temperature controls the randomness or creativity of the model’s responses
 )
-
 
 # =========================================================
 # QUESTION CONTEXTUALIZATION (HISTORY AWARENESS)
@@ -141,7 +137,6 @@ history_aware_retriever = (
     | retriever
 )
 
-
 # =========================================================
 # QUESTION ANSWERING PROMPT
 # =========================================================
@@ -161,7 +156,6 @@ qa_prompt = ChatPromptTemplate.from_messages(
         ("human", "{input}")
     ]
 )
-
 
 # =========================================================
 # RAG PIPELINE (RETRIEVAL-AUGMENTED GENERATION)
@@ -184,7 +178,6 @@ rag_chain = (
     | qa_prompt
     | llm
 )
-
 
 # =========================================================
 # INTERACTIVE CHAT LOOP

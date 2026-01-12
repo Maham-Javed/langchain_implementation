@@ -34,7 +34,6 @@ embeddings = HuggingFaceEmbeddings(
     encode_kwargs={"normalize_embeddings": True}
 )
 
-
 # ---------------------------------------------------------
 # Load Existing Vector Store
 # ---------------------------------------------------------
